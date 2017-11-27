@@ -7,14 +7,16 @@ class newUser extends React.Component {
                 <div className="field-new-user-top">
                     <p>Добавить нового пользователя</p>
                 </div>
-                <form>
-                    <label>Name</label>
-                    <input type="text" id="name" value=""/>
-                    <label>Age</label>
-                    <input type="text" id="age" value=""/>
-                    <label>Note</label>
-                    <input type="text" id="note" value=""/>
-                </form>
+                <div className="field-new-user-form">
+                    <form>
+                        <label htmlFor="name">Name</label>
+                        <input type="text" id="name" value="" placeholder="Name"/>
+                        <label>Age</label>
+                        <input type="text" id="age" value="" placeholder="Age"/>
+                        <label>Note</label>
+                        <input type="text" id="note" value="" placeholder="Note"/>
+                    </form>
+                </div>
             </div>
         )
     }

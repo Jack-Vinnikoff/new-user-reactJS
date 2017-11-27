@@ -1,0 +1,22 @@
+.field-new-user-top {
+  padding-left: 15px;
+  border: 1px solid #cfe9c6;
+  border-radius: 8px;
+  background-color: #cfe9c6;
+}
+.field-new-user-top p {
+  text-transform: uppercase;
+  color: #537457;
+}
+.field-new-user-form {
+  margin-top: 20px;
+}
+.field-new-user-form input {
+  outline: 0;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #cacbcd;
+}
+.field-new-user-form label {
+  font-weight: bold;
+}

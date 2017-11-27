@@ -11,9 +11,9 @@ class newUser extends React.Component {
                     <form>
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" value="" placeholder="Name"/>
-                        <label>Age</label>
+                        <label htmlFor="age">Age</label>
                         <input type="text" id="age" value="" placeholder="Age"/>
-                        <label>Note</label>
+                        <label htmlFor="note">Note</label>
                         <input type="text" id="note" value="" placeholder="Note"/>
                     </form>
                 </div>

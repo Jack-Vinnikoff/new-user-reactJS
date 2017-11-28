@@ -11,4 +11,3 @@ class UsersHead extends React.Component {
 }
 
 export default UsersHead;
-console.log(2);

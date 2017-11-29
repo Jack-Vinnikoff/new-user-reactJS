@@ -1,4 +1,5 @@
 import React from 'react';
+import ShowUsers from './show-users.jsx';
 
 class UsersTable extends React.Component {
     render(){
@@ -18,13 +19,7 @@ class UsersTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Fox</td>
-                            <td>Fox</td>
-                            <td>Fox</td>
-                            <td>Fox</td>
-                            <td>Fox</td>
-                        </tr>
+                        <ShowUsers />
                     </tbody>
                 </table>
             </div>

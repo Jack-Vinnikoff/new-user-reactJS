@@ -21,10 +21,11 @@ class UsersTable extends React.Component {
                     <tbody>
                         <ShowUsers />
                     </tbody>
+
                 </table>
             </div>
         )
     }
 }
-
+console.log(22232);
 export default UsersTable;

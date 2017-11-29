@@ -1,3 +1,19 @@
+#root {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.field {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 //******************** Блок добавления нового пользователя ***************//
 .field-new-user-top {
   padding-left: 15px;
@@ -12,22 +28,28 @@
 }
 
 // Стили формы добавления нового пользователя
-.field-new-user-form {
-  margin-top: 20px;
-  input {
-    outline:0;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #cacbcd;
-  }
-  label {
-    font-weight: bold;
+.field-new-user {
+  align-self: center;
+  .field-new-user-form {
+
+    margin-top: 20px;
+    input {
+      outline:0;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #cacbcd;
+    }
+    label {
+      font-weight: bold;
+    }
+
   }
 
 }
 
 // Стили кнопки добавить
 .field-btn-create {
+  align-self: center;
   margin-top: 5px;
   button {
     color: #2f2f37;
@@ -46,7 +68,6 @@
       color: white;
     }
   }
-
 }
 
 //***************************** Блок пользователей USERS *****************//

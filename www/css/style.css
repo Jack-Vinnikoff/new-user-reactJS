@@ -1,3 +1,16 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+.field {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .field-new-user-top {
   padding-left: 15px;
   border: 1px solid #cfe9c6;
@@ -8,19 +21,23 @@
   text-transform: uppercase;
   color: #537457;
 }
-.field-new-user-form {
+.field-new-user {
+  align-self: center;
+}
+.field-new-user .field-new-user-form {
   margin-top: 20px;
 }
-.field-new-user-form input {
+.field-new-user .field-new-user-form input {
   outline: 0;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #cacbcd;
 }
-.field-new-user-form label {
+.field-new-user .field-new-user-form label {
   font-weight: bold;
 }
 .field-btn-create {
+  align-self: center;
   margin-top: 5px;
 }
 .field-btn-create button {

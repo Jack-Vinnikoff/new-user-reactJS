@@ -3,7 +3,7 @@ import React from 'react';
 class DeleteBtn extends React.Component {
     render() {
         return (
-            <button>Delete</button>
+            <button className="delete-btn">Delete</button>
         )
     }
 }

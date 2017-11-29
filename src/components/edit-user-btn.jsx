@@ -1,11 +1,16 @@
 import React from 'react';
 
-class EditBtn extends React.Component {
-    render() {
-        return (
-            <button className="edit-btn">Edit</button>
-        )
-    }
+export default function EditBtn () {
+    return (
+        <button className="edit-btn">Edit</button>
+    )
 }
-
-export default EditBtn;
+// class EditBtn extends React.Component {
+//     render() {
+//         return (
+//             <button className="edit-btn">Edit</button>
+//         )
+//     }
+// }
+//
+// export default EditBtn;

@@ -3,7 +3,7 @@ import React from 'react';
 class UsersTable extends React.Component {
     render(){
         return (
-            <div className="field-users-head">
+            <div className="field-users-table">
                 <div className="field-users-table-head">
                     <p>Users</p>
                 </div>
@@ -17,6 +17,15 @@ class UsersTable extends React.Component {
                             <th>Edit</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fox</td>
+                            <td>Fox</td>
+                            <td>Fox</td>
+                            <td>Fox</td>
+                            <td>Fox</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         )

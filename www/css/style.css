@@ -80,3 +80,18 @@
 .delete-btn:active {
   border: 1px solid #cccccc;
 }
+.edit-btn {
+  height: 33px;
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+  border: none;
+  background-color: #2e75b3;
+  color: white;
+}
+.edit-btn:hover {
+  background-color: forestgreen;
+}
+.edit-btn:active {
+  border: 1px solid #cccccc;
+}

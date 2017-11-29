@@ -7,8 +7,8 @@ class ShowUsers extends React.Component {
         return (
             <tr>
                 <td>Fox</td>
-                <td>Fox</td>
-                <td>Fox</td>
+                <td>23</td>
+                <td>1</td>
                 <td><DeleteBtn /></td>
                 <td><EditBtn /></td>
             </tr>

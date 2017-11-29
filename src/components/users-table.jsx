@@ -12,14 +12,20 @@ class UsersTable extends React.Component {
                     <thead>
                         <tr>
                             <th>Users</th>
-                            <th>Age</th>
-                            <th>Note</th>
+                            <th>Email</th>
+                            <th>Address</th>
                             <th>Delete</th>
                             <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <ShowUsers />
+                    {this.props.users.map((item) =>
+                        <ShowUsers
+                            name={item.name}
+                            email={item.email}
+                            address={item.address}
+                        />
+                    )}
                     </tbody>
 
                 </table>

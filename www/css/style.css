@@ -34,10 +34,30 @@
   border-radius: 5px;
 }
 .field-users-head {
-  background-color: #ececec;
-  height: 40px;
+  margin-top: 15px;
 }
-.field-users-head p {
-  padding-top: 10px;
+.field-users-head table {
+  border: 1px solid black;
+  /* Рамка вокруг таблицы */
+  border-collapse: collapse;
+  border-radius: 8px;
+}
+.field-users-head caption,
+.field-users-head tr {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding-top: 5px;
+  text-align: left;
+  padding-left: 15px;
+}
+.field-users-head td {
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+}
+.field-users-head caption {
+  background-color: #ececec;
+  padding-top: 5px;
+  text-align: left;
   padding-left: 15px;
 }

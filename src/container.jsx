@@ -1,7 +1,8 @@
 import React from 'react';
 import NewUser from './components/new-user.jsx'
 import BtnNewUser from './components/added-new-user-btn.jsx'
-import UserHead from './components/users-head.jsx';
+import UserTable from './components/users-table.jsx';
+
 
 class LogicApp extends React.Component {
     render(){
@@ -9,7 +10,7 @@ class LogicApp extends React.Component {
                 <div className="field">
                     <NewUser />
                     <BtnNewUser />
-                    <UserHead />
+                    <UserTable />
                 </div>
         )
     }

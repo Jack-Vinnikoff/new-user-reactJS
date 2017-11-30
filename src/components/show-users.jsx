@@ -8,7 +8,9 @@ export default function ShowUsers(props) {
             <td>{props.name}</td>
             <td>{props.email}</td>
             <td>{props.address}</td>
-            <td><DeleteBtn /></td>
+            <td><DeleteBtn
+                    delete={props.delete}
+            /></td>
             <td><EditBtn /></td>
         </tr>
     )

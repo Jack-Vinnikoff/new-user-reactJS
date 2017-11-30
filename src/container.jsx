@@ -15,7 +15,7 @@ class LogicApp extends React.Component {
     }
 
     componentDidMount () {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('http://localhost:3000/users')
             .then(response => {
                 let newUser = response.data.map((item) => {
                     return {id : item.id, name : item.name, email : item.email, address : item.address.city}
@@ -29,13 +29,31 @@ class LogicApp extends React.Component {
             });
     }
 
+    //Метод удаления пользователя
+    deleteUser(idN) {
+        alert(idN);
+        axios.delete('http://localhost:3000/users/'+idN,{params : {id:idN}})
+            .then(response => {
+                console.log(response)
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    }
+
     render(){
         console.log(this.state.users);
         return (
                 <div className="field">
                     <NewUser />
                     <BtnNewUser />
-                    <UserTable users={this.state.users}/>
+                    <UserTable
+                        users={this.state.users}
+                        delete={this.deleteUser.bind(this)}
+
+                    />
                 </div>
         )
     }

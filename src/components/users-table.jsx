@@ -3,6 +3,7 @@ import ShowUsers from './show-users.jsx';
 
 
 export default function UsersTable(props) {
+    const deleteId = ()=>props.delete(item.id);
     return (
         <div className="field-users-table">
             <div className="field-users-table-head">
@@ -24,6 +25,8 @@ export default function UsersTable(props) {
                         name={item.name}
                         email={item.email}
                         address={item.address}
+                        id={item.id}
+                        delete={()=>props.delete(item.id)}
                     />
                 )}
                 </tbody>

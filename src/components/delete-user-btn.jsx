@@ -1,8 +1,9 @@
 import React from 'react';
 
-export default function DeleteBtn () {
+export default function DeleteBtn (props) {
+
     return (
-        <button className="delete-btn">Delete</button>
+        <button className="delete-btn" onClick={props.delete}>Delete</button>
     )
 }
 // class DeleteBtn extends React.Component {

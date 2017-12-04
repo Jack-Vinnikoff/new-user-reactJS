@@ -3,7 +3,7 @@ import React from 'react';
 export default function DeleteBtn (props) {
 
     return (
-        <button className="delete-btn" onClick={props.delete}>Delete</button>
+        <button className="delete-btn" onClick={props.showWindow}>Delete</button>
     )
 }
 // class DeleteBtn extends React.Component {

@@ -9,7 +9,7 @@ export default function ShowUsers(props) {
             <td>{props.email}</td>
             <td>{props.address}</td>
             <td><DeleteBtn
-                    delete={props.delete}
+                    showWindow={props.showWindow}
             /></td>
             <td><EditBtn /></td>
         </tr>

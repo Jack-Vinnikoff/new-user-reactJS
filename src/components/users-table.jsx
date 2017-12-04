@@ -26,7 +26,8 @@ export default function UsersTable(props) {
                         email={item.email}
                         address={item.address}
                         id={item.id}
-                        delete={()=>props.delete(item.id)}
+                        showWindow={()=>props.showWindow(item.id)}
+                        showName={()=>props.showName(item.name)}
                     />
                 )}
                 </tbody>

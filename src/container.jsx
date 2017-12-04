@@ -1,7 +1,7 @@
 import React from 'react';
 import NewUser from './components/new-user.jsx'
 import BtnNewUser from './components/added-new-user-btn.jsx'
-import UserTable from './components/users-table.jsx';
+import UsersTable from './components/users-table.jsx';
 import ModalWin from './components/modal-window.jsx'
 import axios from 'axios';
 
@@ -13,11 +13,18 @@ class LogicApp extends React.Component {
         this.state = {
             users:[],
             openWindow:false,
+            idUsers:0,
+            nameUsers:''
 
         }
     }
 
     componentDidMount () {
+        this.getUsersAjax();
+    }
+
+    // Метод который получает список пользователей из JSON
+    getUsersAjax () {
         axios.get('http://localhost:3000/users')
             .then(response => {
                 let newUser = response.data.map((item) => {
@@ -33,52 +40,57 @@ class LogicApp extends React.Component {
             });
     }
 
-    deleteAnswer(answ){
-        console.log('===========',answ);
+    //Метод который удаляет пользователя из списка JSON
+    deleteUsersAjax (param) {
+        axios.delete('http://localhost:3000/users/'+param,{params : {id:param}})
+            .then(response => {
+                console.log(response)
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    //Открывает окно подтверждение удаления пользователя
+    showIsModalWindow (idN) {
+
+        this.setState({openWindow:!this.state.openWindow,idUsers:idN})
     }
 
 
-
-
-    //Метод удаления пользователя
-    deleteUser(idN) {
-        alert(idN);
-        this.setState({openWindow:!this.state.openWindow})
-        this.deleteAnswer(idN);
-        if(this.deleteAnswer === 'popa'){
-            alert('YES');
-            // axios.delete('http://localhost:3000/users/'+idN,{params : {id:idN}})
-            //     .then(response => {
-            //         console.log(response)
-            //
-            //     })
-            //     .catch(function (error) {
-            //         console.log(error);
-            //     });
-
-        }
-        else {
-            return false
-        }
+    //Метод который показывает имя пользователя которого хотят удалить
+    showIsName (name) {
+        this.setState({nameUsers:name},()=>console.log(this.state.nameUsers))
 
     }
+
+    // Метод удаления пользователя
+    deleteUser(){
+        const id = this.state.idUsers;
+        setTimeout(()=> this.getUsersAjax(),500);
+        this.deleteUsersAjax(id);
+
+        this.showIsModalWindow();
+    }
+
 
     render(){
-        console.log(this.state.users);
         return (
                 <div className="field">
                     <NewUser />
                     <BtnNewUser />
-                    <UserTable
+                    <UsersTable
                         users={this.state.users}
-                        delete={this.deleteUser.bind(this)}
+                        showWindow={this.showIsModalWindow.bind(this)}
+                        showName={this.showIsName.bind(this)}
 
                     />
                     {this.state.openWindow?
                     <ModalWin
-                        isOpen={this.state.openWindow}
-                        yes={this.deleteAnswer}
-
+                        delete={this.deleteUser.bind(this)}
+                        cancel={this.showIsModalWindow.bind(this)}
+                        showName={this.showIsName.bind(this)}
                     />:''}
                 </div>
         )

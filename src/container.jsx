@@ -77,6 +77,7 @@ class LogicApp extends React.Component {
         this.showIsModalWindow();
     }
 
+    //**************************** форма добавления нового пользователя ********
     changeInputName(event) {
         this.setState({inputName:event.target.value},()=>console.log(this.state.inputName))
     }
@@ -89,6 +90,32 @@ class LogicApp extends React.Component {
         this.setState({inputAddress:event.target.value},()=>console.log(this.state.inputAddress))
     }
 
+    // Добавление пользователя AJAX
+    postUserAjax () {
+        axios.post('http://localhost:3000/users/', {
+            id:25,
+            name: this.state.inputName,
+            email: this.state.inputEmail,
+            address: {
+                city:this.state.inputAddress
+            }
+
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                alert('Проблема с POST запросам AJAX')
+                console.log(error);
+            });
+    }
+
+    addedNewUserBtn () {
+        console.log('heelo');
+        this.postUserAjax();
+        setTimeout(()=> this.getUsersAjax(),500);
+        this.setState({inputName:'',inputEmail:'',inputAddress:''})
+    }
     render(){
         return (
                 <div className="field">
@@ -96,8 +123,11 @@ class LogicApp extends React.Component {
                         changeInputName={this.changeInputName.bind(this)}
                         changeInputEmail={this.changeInputEmail.bind(this)}
                         changeInputAddress={this.changeInputAddress.bind(this)}
+
                     />
-                    <BtnNewUser />
+                    <BtnNewUser
+                        newUserClick={this.addedNewUserBtn.bind(this)}
+                    />
                     <UsersTable
                         users={this.state.users}
                         showWindow={this.showIsModalWindow.bind(this)}

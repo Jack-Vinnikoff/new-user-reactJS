@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function newUser (props){
+export default function NewUser (props){
     return(
              <div className="field-new-user">
                  <div className="field-new-user-top">

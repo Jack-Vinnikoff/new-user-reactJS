@@ -81,11 +81,16 @@ class LogicApp extends React.Component {
         this.setState({inputName:event.target.value},()=>console.log(this.state.inputName))
     }
 
+    changeInputEmail(event) {
+        this.setState({inputEmail:event.target.value},()=>console.log(this.state.inputEmail))
+    }
+
     render(){
         return (
                 <div className="field">
                     <NewUser
                         changeInputName={this.changeInputName.bind(this)}
+                        changeInputEmail={this.changeInputEmail.bind(this)}
                     />
                     <BtnNewUser />
                     <UsersTable

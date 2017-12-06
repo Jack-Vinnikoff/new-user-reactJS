@@ -13,7 +13,7 @@ export default function newUser (props){
                          <label htmlFor="age">E-mail</label>
                          <input type="text" id="age" onChange={props.changeInputEmail} placeholder="E-mail"/>
                          <label htmlFor="note">Address</label>
-                         <input type="text" id="note" value="" placeholder="Address"/>
+                         <input type="text" id="note" onChange={props.changeInputAddress} placeholder="Address"/>
                      </form>
                  </div>
              </div>

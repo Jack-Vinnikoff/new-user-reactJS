@@ -93,7 +93,7 @@ class LogicApp extends React.Component {
     // Добавление пользователя AJAX
     postUserAjax () {
         axios.post('http://localhost:3000/users/', {
-            id:25,
+            id:this.newIdUser(),
             name: this.state.inputName,
             email: this.state.inputEmail,
             address: {
@@ -111,11 +111,15 @@ class LogicApp extends React.Component {
     }
 
     addedNewUserBtn () {
-        console.log('heelo');
         this.postUserAjax();
         setTimeout(()=> this.getUsersAjax(),500);
         this.setState({inputName:'',inputEmail:'',inputAddress:''})
     }
+
+    newIdUser (){
+        return this.state.users.length+1;
+    }
+
     render(){
         return (
                 <div className="field">
@@ -123,6 +127,9 @@ class LogicApp extends React.Component {
                         changeInputName={this.changeInputName.bind(this)}
                         changeInputEmail={this.changeInputEmail.bind(this)}
                         changeInputAddress={this.changeInputAddress.bind(this)}
+                        name={this.state.inputName}
+                        email={this.state.inputEmail}
+                        address={this.state.inputAddress}
 
                     />
                     <BtnNewUser

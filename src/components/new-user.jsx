@@ -9,11 +9,11 @@ export default function NewUser (props){
                  <div className="field-new-user-form">
                      <form>
                          <label htmlFor="name">Name</label>
-                         <input type="text" id="name" onChange={props.changeInputName} placeholder="Name"/>
+                         <input type="text" id="name" onChange={props.changeInputName} placeholder="Name" value={props.name}/>
                          <label htmlFor="age">E-mail</label>
-                         <input type="text" id="age" onChange={props.changeInputEmail} placeholder="E-mail"/>
+                         <input type="text" id="age" onChange={props.changeInputEmail} placeholder="E-mail" value={props.email}/>
                          <label htmlFor="note">Address</label>
-                         <input type="text" id="note" onChange={props.changeInputAddress} placeholder="Address"/>
+                         <input type="text" id="note" onChange={props.changeInputAddress} placeholder="Address" value={props.address}/>
                      </form>
                  </div>
              </div>

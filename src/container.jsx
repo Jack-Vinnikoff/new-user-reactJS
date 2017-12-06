@@ -14,6 +14,9 @@ class LogicApp extends React.Component {
             users:[],
             openWindow:false,
             idUsers:0,
+            inputName:'',
+            inputEmail:'',
+            inputAddress:'',
             nameUsers:''
 
         }
@@ -74,11 +77,16 @@ class LogicApp extends React.Component {
         this.showIsModalWindow();
     }
 
+    changeInputName(event) {
+        this.setState({inputName:event.target.value},()=>console.log(this.state.inputName))
+    }
 
     render(){
         return (
                 <div className="field">
-                    <NewUser />
+                    <NewUser
+                        changeInputName={this.changeInputName.bind(this)}
+                    />
                     <BtnNewUser />
                     <UsersTable
                         users={this.state.users}

@@ -20,6 +20,15 @@ class LogicApp extends React.Component {
             nameUsers:''
 
         }
+        this.changeInputName = this.changeInputName.bind(this);
+        this.changeInputEmail = this.changeInputEmail.bind(this);
+        this.changeInputAddress = this.changeInputAddress.bind(this);
+        this.addedNewUserBtn = this.addedNewUserBtn.bind(this);
+        this.showIsModalWindow = this.showIsModalWindow.bind(this);
+        this.showIsName = this.showIsName.bind(this);
+        this.deleteUser = this.deleteUser.bind(this);
+        this.showIsModalWindow = this.showIsModalWindow.bind(this);
+        this.showIsName = this.showIsName.bind(this)
     }
 
     componentDidMount () {
@@ -30,11 +39,10 @@ class LogicApp extends React.Component {
     getUsersAjax () {
         axios.get('http://localhost:3000/users')
             .then(response => {
-                let newUser = response.data.map((item) => {
+                let newUsers = response.data.map((item) => {
                     return {id : item.id, name : item.name, email : item.email, address : item.address.city}
                 })
-                this.setState({users:newUser})
-                //this.setState({id:response.data})
+                this.setState({users:newUsers})
             })
 
             .catch(function (error) {
@@ -117,35 +125,40 @@ class LogicApp extends React.Component {
     }
 
     newIdUser (){
+
         return this.state.users.length+1;
     }
 
     render(){
+
+        //Проводим Деструктуризацию элементов объекта this.state
+        const {inputName,inputEmail,inputAddress,users,openWindow} = this.state;
+
         return (
                 <div className="field">
                     <NewUser
-                        changeInputName={this.changeInputName.bind(this)}
-                        changeInputEmail={this.changeInputEmail.bind(this)}
-                        changeInputAddress={this.changeInputAddress.bind(this)}
-                        name={this.state.inputName}
-                        email={this.state.inputEmail}
-                        address={this.state.inputAddress}
+                        changeInputName={this.changeInputName}
+                        changeInputEmail={this.changeInputEmail}
+                        changeInputAddress={this.changeInputAddress}
+                        name={inputName}
+                        email={inputEmail}
+                        address={inputAddress}
 
                     />
                     <BtnNewUser
-                        newUserClick={this.addedNewUserBtn.bind(this)}
+                        newUserClick={this.addedNewUserBtn}
                     />
                     <UsersTable
-                        users={this.state.users}
-                        showWindow={this.showIsModalWindow.bind(this)}
-                        showName={this.showIsName.bind(this)}
+                        users={users}
+                        showWindow={this.showIsModalWindow}
+                        showName={this.showIsName}
 
                     />
-                    {this.state.openWindow?
+                    {openWindow?
                     <ModalWin
-                        delete={this.deleteUser.bind(this)}
-                        cancel={this.showIsModalWindow.bind(this)}
-                        showName={this.showIsName.bind(this)}
+                        delete={this.deleteUser}
+                        cancel={this.showIsModalWindow}
+                        showName={this.showIsName}
                     />:''}
                 </div>
         )

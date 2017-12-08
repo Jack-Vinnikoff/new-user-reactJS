@@ -21,7 +21,7 @@ export default function UsersTable(props) {
                 </thead>
                 <tbody>
                 {props.users.map((item) =>
-                    <ShowUsers
+                    <ShowUsers key={item.id}
                         name={item.name}
                         email={item.email}
                         address={item.address}

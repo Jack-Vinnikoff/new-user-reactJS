@@ -117,16 +117,22 @@ class LogicApp extends React.Component {
                 console.log(error);
             });
     }
-
+1
     addedNewUserBtn () {
         this.postUserAjax();
         setTimeout(()=> this.getUsersAjax(),500);
-        this.setState({inputName:'',inputEmail:'',inputAddress:''})
+        setTimeout(()=> this.newIdUser(),1000);
+        this.setState({inputName:'',inputEmail:'',inputAddress:''});
+
     }
 
     newIdUser (){
+        let id = this.state.users.length+1;
+        this.state.users.forEach((item,i)=>{
 
-        return this.state.users.length+1;
+        })
+        console.log(this.state.users);
+        return id;
     }
 
     render(){

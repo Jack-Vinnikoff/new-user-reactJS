@@ -127,12 +127,11 @@ class LogicApp extends React.Component {
     }
 
     newIdUser (){
-        let id = this.state.users.length+1;
         this.state.users.forEach((item,i)=>{
-
-        })
-        console.log(this.state.users);
-        return id;
+            let id = this.state.users.length+1;
+            console.log(this.state.users);
+            return id;
+        });
     }
 
     render(){

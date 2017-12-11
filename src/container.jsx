@@ -156,7 +156,7 @@ class LogicApp extends React.Component {
                     />
                     {openWindow?
                     <ModalWin
-                        delete={this.deleteUser}
+                        deleteUser={this.deleteUser}
                         cancel={this.showIsModalWindow}
                         showName={this.showIsName}
                     />:''}

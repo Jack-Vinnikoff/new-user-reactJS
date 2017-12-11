@@ -3,7 +3,7 @@ import ShowUsers from './show-users.jsx';
 
 
 export default function UsersTable(props) {
-    const deleteId = ()=>props.delete(item.id);
+    const {users, showWindow, showName} = props;
     return (
         <div className="field-users-table">
             <div className="field-users-table-head">
@@ -20,14 +20,14 @@ export default function UsersTable(props) {
                 </tr>
                 </thead>
                 <tbody>
-                {props.users.map((item) =>
+                {users.map((item) =>
                     <ShowUsers key={item.id}
                         name={item.name}
                         email={item.email}
                         address={item.address}
                         id={item.id}
-                        showWindow={()=>props.showWindow(item.id)}
-                        showName={()=>props.showName(item.name)}
+                        showWindow={()=>showWindow(item.id)}
+                        showName={()=>showName(item.name)}
                     />
                 )}
                 </tbody>
@@ -36,36 +36,3 @@ export default function UsersTable(props) {
         </div>
     )
 }
-// class UsersTable extends React.Component {
-//     render(){
-//         return (
-//             <div className="field-users-table">
-//                 <div className="field-users-table-head">
-//                     <p>Users</p>
-//                 </div>
-//                 <table width="100%">
-//                     <thead>
-//                         <tr>
-//                             <th>Users</th>
-//                             <th>Email</th>
-//                             <th>Address</th>
-//                             <th>Delete</th>
-//                             <th>Edit</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                     {this.props.users.map((item) =>
-//                         <ShowUsers
-//                             name={item.name}
-//                             email={item.email}
-//                             address={item.address}
-//                         />
-//                     )}
-//                     </tbody>
-//
-//                 </table>
-//             </div>
-//         )
-//     }
-// }
-// export default UsersTable;

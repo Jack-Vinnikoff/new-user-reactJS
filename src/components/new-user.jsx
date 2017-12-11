@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function NewUser (props){
+    const {changeInputName, name, changeInputEmail, email, changeInputAddress, address} = props;
     return(
              <div className="field-new-user">
                  <div className="field-new-user-top">
@@ -9,37 +10,13 @@ export default function NewUser (props){
                  <div className="field-new-user-form">
                      <form>
                          <label htmlFor="name">Name</label>
-                         <input type="text" id="name" onChange={props.changeInputName} placeholder="Name" value={props.name}/>
+                         <input type="text" id="name" onChange={changeInputName} placeholder="Name" value={name}/>
                          <label htmlFor="age">E-mail</label>
-                         <input type="text" id="age" onChange={props.changeInputEmail} placeholder="E-mail" value={props.email}/>
+                         <input type="text" id="age" onChange={changeInputEmail} placeholder="E-mail" value={email}/>
                          <label htmlFor="note">Address</label>
-                         <input type="text" id="note" onChange={props.changeInputAddress} placeholder="Address" value={props.address}/>
+                         <input type="text" id="note" onChange={changeInputAddress} placeholder="Address" value={address}/>
                      </form>
                  </div>
              </div>
     )
 }
-
-// class newUser extends React.Component {
-//     render(){
-//         return(
-//             <div className="field-new-user">
-//                 <div className="field-new-user-top">
-//                     <p>Добавить нового пользователя</p>
-//                 </div>
-//                 <div className="field-new-user-form">
-//                     <form>
-//                         <label htmlFor="name">Name</label>
-//                         <input type="text" id="name" value="" placeholder="Name"/>
-//                         <label htmlFor="age">Age</label>
-//                         <input type="text" id="age" value="" placeholder="Age"/>
-//                         <label htmlFor="note">Note</label>
-//                         <input type="text" id="note" value="" placeholder="Note"/>
-//                     </form>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-//
-// export default newUser;

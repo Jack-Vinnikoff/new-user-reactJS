@@ -1,8 +1,9 @@
 import React from 'react';
-import NewUser from './components/new-user.jsx'
-import BtnNewUser from './components/added-new-user-btn.jsx'
+import NewUser from './components/new-user.jsx';
+import BtnNewUser from './components/added-new-user-btn.jsx';
 import UsersTable from './components/users-table.jsx';
-import ModalWin from './components/modal-window.jsx'
+import ModalWin from './components/modal-window.jsx';
+import FormErrors from './components/form-errors.jsx';
 import axios from 'axios';
 
 
@@ -17,7 +18,10 @@ class LogicApp extends React.Component {
             inputName:'',
             inputEmail:'',
             inputAddress:'',
-            nameUsers:''
+            nameUsers:'',
+            formErrors: {name: '', email: ''},
+            nameValid: false,
+            emailValid: false
 
         }
         this.changeInputName = this.changeInputName.bind(this);
@@ -141,6 +145,9 @@ class LogicApp extends React.Component {
 
         return (
                 <div className="field">
+                    <FormErrors
+                        formErrors={this.state.formErrors}
+                    />
                     <NewUser
                         changeInputName={this.changeInputName}
                         changeInputEmail={this.changeInputEmail}

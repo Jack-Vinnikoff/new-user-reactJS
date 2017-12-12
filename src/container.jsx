@@ -3,6 +3,7 @@ import NewUser from './components/new-user.jsx';
 import BtnNewUser from './components/added-new-user-btn.jsx';
 import UsersTable from './components/users-table.jsx';
 import ModalWin from './components/modal-window.jsx';
+import Top from './components/top.jsx';
 import FormErrors from './components/form-errors.jsx';
 import axios from 'axios';
 
@@ -145,6 +146,7 @@ class LogicApp extends React.Component {
 
         return (
                 <div className="field">
+                    <Top />
                     <FormErrors
                         formErrors={this.state.formErrors}
                     />

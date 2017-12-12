@@ -4,9 +4,7 @@ export default function NewUser (props){
     const {changeInputName, name, changeInputEmail, email, changeInputAddress, address} = props;
     return(
              <div className="field-new-user">
-                 <div className="field-new-user-top">
-                     <p>Добавить нового пользователя</p>
-                 </div>
+
                  <div className="field-new-user-form">
                      <form>
                          <label htmlFor="name">Name</label>

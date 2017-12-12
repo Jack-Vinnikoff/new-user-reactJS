@@ -4,7 +4,7 @@ import BtnNewUser from './components/added-new-user-btn.jsx';
 import UsersTable from './components/users-table.jsx';
 import ModalWin from './components/modal-window.jsx';
 import Top from './components/top.jsx';
-import FormErrors from './components/form-errors.jsx';
+import {FormErrors} from './components/form-errors.jsx';
 import axios from 'axios';
 
 
@@ -15,7 +15,6 @@ class LogicApp extends React.Component {
         this.state = {
             users:[],
             openWindow:false,
-            idUsers:0,
             inputName:'',
             inputEmail:'',
             inputAddress:'',
@@ -92,7 +91,15 @@ class LogicApp extends React.Component {
 
     //**************************** форма добавления нового пользователя ********
     changeInputName(event) {
-        this.setState({inputName:event.target.value},()=>console.log(this.state.inputName))
+        this.setState({inputName:event.target.value},()=> this.validateFieldName())
+    }
+
+    validateFieldName() {
+        let nameValid = this.state.inputName;
+        if(nameValid.length <6) {
+            return this.setState({formErrors: {name: 'Is too a short'}})
+        }
+        return this.setState({formErrors: {name: ''}})
     }
 
     changeInputEmail(event) {

@@ -1,9 +1,14 @@
 import React from 'react';
 
-export default function FormErrors (props) {
-    return (
-            <div className="field-form-errors">
-
-            </div>
-    )
-}
+export const FormErrors = ({formErrors}) =>
+    <div className='formErrors'>
+        {Object.keys(formErrors).map((fieldName, i) => {
+            if(formErrors[fieldName].length > 0){
+                return (
+                    <p key={i}>{fieldName} {formErrors[fieldName]}</p>
+                )
+            } else {
+                return '';
+            }
+        })}
+    </div>

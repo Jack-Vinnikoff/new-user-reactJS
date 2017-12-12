@@ -90,16 +90,21 @@ class LogicApp extends React.Component {
     }
 
     //**************************** форма добавления нового пользователя ********
-    changeInputName(event) {
-        const value = event.target.value;
+
+    //Метод делает первую букву заглавной
+    symbolUpperCase(e){
+        const value = e.target.value;
         const newName =value.charAt(0).toUpperCase()+value.slice(1);
-        this.setState({inputName:newName},()=> this.validateFieldName())
+        return newName;
+    }
+    changeInputName(event) {
+        this.setState({inputName:this.symbolUpperCase(event)},()=> this.validateFieldName())
     }
 
     validateFieldName() {
         let nameValid = this.state.inputName;
         if(nameValid.length <3) {
-            return this.setState({formErrors: {name: 'Is too a short'}})
+            return this.setState({formErrors: {name: 'is too a short'}})
         }
         return this.setState({formErrors: {name: ''}})
     }
@@ -109,7 +114,7 @@ class LogicApp extends React.Component {
     }
 
     changeInputAddress (event) {
-        this.setState({inputAddress:event.target.value},()=>console.log(this.state.inputAddress))
+        this.setState({inputAddress:this.symbolUpperCase(event)})
     }
 
     // Добавление пользователя AJAX

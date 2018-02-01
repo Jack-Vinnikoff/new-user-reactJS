@@ -110,7 +110,15 @@ class LogicApp extends React.Component {
     }
 
     changeInputEmail(event) {
-        this.setState({inputEmail:event.target.value},()=>console.log(this.state.inputEmail))
+        const email = event.target.value;
+        this.setState({inputEmail:email},()=>this.validateFieldEmail(email))
+    }
+
+    validateFieldEmail(e) {
+        let emailValid = this.state.inputEmail;
+        if(emailValid === e.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)){
+            alert('bad');
+        }
     }
 
     changeInputAddress (event) {

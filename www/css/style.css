@@ -9,6 +9,17 @@
   display: flex;
   flex-direction: column;
 }
+.field-menu {
+  display: flex;
+  justify-content: center;
+}
+.field-menu li {
+  margin-left: 10px;
+  padding: 10px 15px 10px 15px;
+  display: inline;
+  background-color: #e0ecff;
+  border-radius: 5px;
+}
 .field-new-user-top {
   padding-left: 15px;
   border: 1px solid #cfe9c6;
